@@ -39,7 +39,7 @@ Palette monochromatique rouge/bordeaux, générée avec [Coolors](https://coolor
 ├── index.html
 ├── style.css
 └── images/
-    └── modern desktop computer-bro.png
+    └── modern desktop computer-amico.png
 ```
 
 ## 🚀 Lancer le projet

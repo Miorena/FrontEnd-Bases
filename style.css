@@ -168,7 +168,7 @@ span {
 	align-items: center;
 	flex-direction: column;
   margin: 0 -12vw;
-	padding: 50px 12vw;
+	padding: 20px 12vw;
   background-color: var(--color-dark);
   color: var(--color-white);
 }
@@ -181,7 +181,7 @@ span {
 }
 
 .footer-wrapper a {
-	font-size: 23px;
+	font-size: 20px;
   color: var(--color-white);	
 }
 

@@ -2,6 +2,10 @@
 
 Petit projet d'initiation aux bases du HTML et CSS, réalisé pour progresser sur le frontend. Il s'agit d'une page vitrine fictive ("DesignAcademy") sans direction artistique préétablie : l'objectif est avant tout de pratiquer les fondamentaux (structure sémantique, Flexbox, Grid, variables CSS) plutôt que d'obtenir un design fini.
 
+## 🖼️ Aperçu
+
+![Aperçu de la page DesignAcademy](./images/screenshot.png)
+
 ## 🎯 Objectif du projet
 
 Reprendre les bases HTML/CSS pas à pas, en construisant une page composant par composant (navbar, hero, section services, footer...), afin de mieux comprendre *pourquoi* on écrit tel ou tel code, plutôt que de simplement reproduire un tutoriel.

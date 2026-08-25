@@ -181,10 +181,10 @@ span {
 }
 
 .footer-wrapper a {
-	font-size: 20px;
+	font-size: 23px;
   color: var(--color-white);	
 }
 
 .footer-wrapper p{
-	margin-top: 15px;
+	margin-top: 10px;
 }

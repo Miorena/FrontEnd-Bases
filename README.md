@@ -1,6 +1,6 @@
 # Learn bases of FrontEnd
 
-Petit projet d'initiation aux bases du HTML et CSS, réalisé pour progresser sur le frontend. Il s'agit d'une page vitrine fictive ("DesignAcademy") sans direction artistique préétablie : l'objectif est avant tout de pratiquer les fondamentaux (structure sémantique, Flexbox, Grid, variables CSS) plutôt que d'obtenir un design fini.
+Petit projet d'initiation aux bases du HTML et CSS, réalisé pour progresser sur le frontend. Il s'agit d'une page vitrine fictive ("DesignAcademy") sans direction artistique préétablie : l'objectif est avant tout de pratiquer les fondamentaux (structure sémantique, Flexbox, Grid, variables CSS, responsive) plutôt que d'obtenir un design fini.
 
 ## 🖼️ Aperçu
 
@@ -13,17 +13,27 @@ Reprendre les bases HTML/CSS pas à pas, en construisant une page composant par 
 ## 🛠️ Technologies utilisées
 
 - **HTML5** — structure sémantique (`header`, `main`, `section`, `footer`, `nav`)
-- **CSS3** — Flexbox, CSS Grid, variables CSS (custom properties), transitions, `position: sticky`
+- **CSS3** — Flexbox, CSS Grid, variables CSS (custom properties), transitions, `position: sticky`/`absolute`, media queries
+- **JavaScript** — manipulation du DOM (`querySelector`, `addEventListener`, `classList.toggle`) pour le menu burger
 - **[Font Awesome](https://fontawesome.com/)** — icônes solid et brands (via CDN)
 - **Google Fonts** — police [Poppins](https://fonts.google.com/specimen/Poppins)
 - Illustrations vectorielles [unDraw](https://undraw.co/illustrations)
 
 ## 📄 Structure de la page
 
-- **Navbar** — logo, menu de navigation, bouton d'action, avec ombre douce, coins arrondis, et `position: sticky` pour rester visible au scroll
+- **Navbar** — logo, menu de navigation, bouton d'action, avec ombre douce, coins arrondis, et `position: sticky` pour rester visible au scroll. Devient un menu burger sur mobile (voir section Responsive)
 - **Hero** — titre, texte de présentation, bouton CTA, illustration (mise en page deux colonnes via Flexbox)
 - **Services** — 3 cartes (Design UI, HTML & CSS, Portfolio) alignées en grille via CSS Grid, avec animation de zoom au survol
 - **Footer** — copyright et liens vers GitHub/Instagram/Discord, en pleine largeur (hors du padding global de la page) et toujours collé en bas de l'écran
+
+## 📱 Responsive
+
+- Breakpoint mobile géré via `@media (max-width: 768px)`, testé sur une largeur de référence de 375px
+- **Navbar mobile** : le menu horizontal est remplacé par un bouton burger (icône Font Awesome `fa-bars`)
+  - Le menu déroulant (`.menu ul.active`) s'affiche en `position: absolute` sous le header, avec fond blanc, `box-shadow` et `border-radius` cohérents avec le reste du design
+  - Ouverture/fermeture gérée en JavaScript : `querySelector` pour cibler le bouton et la liste, `addEventListener('click', ...)` pour écouter le clic, `classList.toggle('active')` pour basculer l'affichage
+  - `gap` et `justify-content: flex-start` appliqués au `header` en mobile pour un espacement/alignement propre entre burger et logo
+- **À venir** : adaptation du Hero (empilement vertical du texte et de l'illustration) et des cartes Services (passage en une colonne) sur mobile
 
 ## 🎨 Palette de couleurs
 
@@ -43,6 +53,7 @@ Palette monochromatique rouge/bordeaux, générée avec [Coolors](https://coolor
 ```
 ├── index.html
 ├── style.css
+├── script.js
 └── images/
     └── modern desktop computer-amico.png
 ```
@@ -64,3 +75,5 @@ Ouvrir `index.html` dans un navigateur, ou servir le dossier avec une extension 
 - Différence entre unités `%` et `vw`, utile pour faire déborder un élément (comme le footer) du padding d'un parent
 - "Sticky footer" (footer toujours collé en bas même avec peu de contenu) via Flexbox sur `body`/`main`
 - Hiérarchie de couleurs et contraste/accessibilité
+- Responsive design : media queries, breakpoints, `position: absolute` pour un menu déroulant
+- Manipulation du DOM en JavaScript (`querySelector`, `addEventListener`, `classList.toggle`) pour un menu burger

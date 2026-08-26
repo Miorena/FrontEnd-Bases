@@ -37,7 +37,6 @@ header {
 }
 
 main {
-  min-height: 110vh;
   flex: 1;
 }
 
@@ -92,7 +91,8 @@ a {
 
 .hero-wrapper {
   display: flex;
-  margin-top: 30px;
+  margin: 20px 0;
+
 }
 
 .text-hero-wrapper {
@@ -126,6 +126,10 @@ a {
 .image-hero-wrapper img {
   width: 65%;
   display: block;
+}
+
+.service-wrapper {
+	margin-bottom: 50px;
 }
 
 .service-wrapper h2 {
@@ -226,4 +230,8 @@ a {
 		padding: 20px;
 		margin-top: 10px;
   }
+
+	.service-cards {
+		grid-template-columns: 1fr;
+	}
 }

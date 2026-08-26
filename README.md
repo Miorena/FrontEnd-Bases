@@ -22,18 +22,24 @@ Reprendre les bases HTML/CSS pas à pas, en construisant une page composant par 
 ## 📄 Structure de la page
 
 - **Navbar** — logo, menu de navigation, bouton d'action, avec ombre douce, coins arrondis, et `position: sticky` pour rester visible au scroll. Devient un menu burger sur mobile (voir section Responsive)
-- **Hero** — titre, texte de présentation, bouton CTA, illustration (mise en page deux colonnes via Flexbox)
-- **Services** — 3 cartes (Design UI, HTML & CSS, Portfolio) alignées en grille via CSS Grid, avec animation de zoom au survol
+- **Hero** — titre, texte de présentation, bouton CTA, illustration (mise en page deux colonnes via Flexbox, empilée sur mobile)
+- **Services** — 3 cartes (Design UI, HTML & CSS, Portfolio) alignées en grille via CSS Grid, avec animation de zoom au survol (une colonne sur mobile)
 - **Footer** — copyright et liens vers GitHub/Instagram/Discord, en pleine largeur (hors du padding global de la page) et toujours collé en bas de l'écran
 
 ## 📱 Responsive
 
-- Breakpoint mobile géré via `@media (max-width: 768px)`, testé sur une largeur de référence de 375px
+Breakpoint mobile géré via `@media (max-width: 768px)`, testé sur une largeur de référence de 375px. Les trois zones de la page sont adaptées :
+
 - **Navbar mobile** : le menu horizontal est remplacé par un bouton burger (icône Font Awesome `fa-bars`)
   - Le menu déroulant (`.menu ul.active`) s'affiche en `position: absolute` sous le header, avec fond blanc, `box-shadow` et `border-radius` cohérents avec le reste du design
   - Ouverture/fermeture gérée en JavaScript : `querySelector` pour cibler le bouton et la liste, `addEventListener('click', ...)` pour écouter le clic, `classList.toggle('active')` pour basculer l'affichage
   - `gap` et `justify-content: flex-start` appliqués au `header` en mobile pour un espacement/alignement propre entre burger et logo
-- **À venir** : adaptation du Hero (empilement vertical du texte et de l'illustration) et des cartes Services (passage en une colonne) sur mobile
+- **Hero mobile** : `flex-direction: column` sur `.hero-wrapper` pour empiler le texte au-dessus de l'illustration
+  - `padding` du texte remis à 0 (devenu inutile en colonne)
+  - Tailles de police réduites (titre, paragraphe, bouton) pour s'adapter à l'écran
+  - Illustration masquée (`display: none`) pour alléger la page sur mobile
+- **Services mobile** : `grid-template-columns: 1fr` pour empiler les 3 cartes verticalement
+  - `margin-bottom` ajouté sur `.service-wrapper` pour garder un espace correct avant le footer
 
 ## 🎨 Palette de couleurs
 
@@ -75,5 +81,5 @@ Ouvrir `index.html` dans un navigateur, ou servir le dossier avec une extension 
 - Différence entre unités `%` et `vw`, utile pour faire déborder un élément (comme le footer) du padding d'un parent
 - "Sticky footer" (footer toujours collé en bas même avec peu de contenu) via Flexbox sur `body`/`main`
 - Hiérarchie de couleurs et contraste/accessibilité
-- Responsive design : media queries, breakpoints, `position: absolute` pour un menu déroulant
+- Responsive design complet : media queries, breakpoints, `position: absolute` pour un menu déroulant, adaptation de layout (Flexbox/Grid) et de typographie selon la taille d'écran
 - Manipulation du DOM en JavaScript (`querySelector`, `addEventListener`, `classList.toggle`) pour un menu burger

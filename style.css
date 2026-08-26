@@ -231,6 +231,34 @@ a {
 		margin-top: 10px;
   }
 
+	.hero-wrapper {
+		flex-direction: column;
+	}
+
+	.text-hero-wrapper {
+		padding: 0;
+	}
+
+	.text-hero-wrapper h1 {
+		font-size: 40px;
+	}
+
+	.text-hero-wrapper p {
+		font-size: 15px;
+	}
+
+	.text-hero-wrapper button {
+		font-size: 15px;
+	}
+
+	.image-hero-wrapper {
+		display: none;
+	}
+
+	.service-wrapper h2 {
+		font-size: 30px;
+	}
+
 	.service-cards {
 		grid-template-columns: 1fr;
 	}
